@@ -4,7 +4,7 @@ import ExperienceCard from './ExperienceCard';
 
 type Props = {}
 
- function WorkExperience({}: Props) {
+ const WorkExperience = ({}: Props) => {
   return (
     <motion.div 
     initial={{ opacity: 0 }}

@@ -11,7 +11,7 @@ type Inputs = {
 
 type Props = {}
 
-function ContactMe({}: Props) {
+const ContactMe =({}: Props) => {
     const { 
         register, 
         handleSubmit, 

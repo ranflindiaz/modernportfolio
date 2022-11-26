@@ -5,7 +5,7 @@ import projectImg from '../public/me.jpg';
 
 type Props = {}
 
-function Projects({}: Props) {
+const Projects = ({}: Props) => {
     const projects = [1,2,3,4,5];
   return (
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 scrollbar-thin'>
