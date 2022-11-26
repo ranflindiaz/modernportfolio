@@ -1,0 +1,1 @@
+import { Skill } from '../typings'
