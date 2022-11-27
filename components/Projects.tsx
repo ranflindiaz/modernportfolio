@@ -1,12 +1,14 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
-import projectImg from '../public/me.jpg';
+import { Project } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {}
+type Props = {
+    projects: Project[]
+}
 
-const Projects = ({}: Props) => {
-    const projects = [1,2,3,4,5];
+const Projects = ({projects}: Props) => {
   return (
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 scrollbar-thin'>
         <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
@@ -19,12 +21,12 @@ const Projects = ({}: Props) => {
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true}}
         className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
             // eslint-disable-next-line react/jsx-key
             <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
                 <Image
                     className='w-72 h-72'
-                    src={projectImg}
+                    src={urlFor(project?.image).url()}
                     alt='Project image'
                 />
 
@@ -32,10 +34,22 @@ const Projects = ({}: Props) => {
                     <h4 className='text-4xl font-semibold text-center'>
                         <span className='underline decoration-[#F7AB0A]/50'>
                             Case of Study {i+1} of {projects.length}
-                        </span> Note: add project title here 
+                        </span> {project?.title} 
                     </h4>
+
+                    <div className='flex items-center space-x-2 justify-center'>
+                        {project.technologies.map((tech) => (
+                            <Image 
+                                className='h-10 w-10'
+                                key={tech._id}
+                                src={urlFor(tech?.image).url()}
+                                alt=''
+                            />
+                        ))}
+                    </div>
+
                     <p className='text-lg text-center md:text-left'>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, suscipit laborum? Laborum pariatur laboriosam iusto voluptas vel fuga ratione! Quia deleniti provident aliquam? Amet accusantium, quod totam eum minima expedita. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, itaque sed ut, accusantium officia esse quam eius tenetur quos cum dolorum dolores. Ad, in. Ducimus, minus animi. Deserunt, quam excepturi!
+                        {project?.summary}
                     </p>
                 </div>
             </div>

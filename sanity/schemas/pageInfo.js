@@ -15,7 +15,7 @@ export default {
     },
     {
       name: 'heroImage',
-      title: 'Image',
+      title: 'Hero Image',
       type: 'image',
       options: {
         hotspot: true,
@@ -23,12 +23,12 @@ export default {
     },
     {
       name: 'backgroundInformation',
-      title: 'BackgroundInformation',
+      title: 'Background Information',
       type: 'string'
     },
     {
       name: 'profilePic',
-      title: 'ProfilePic',
+      title: 'Profile Picture',
       type: 'image',
       option: {
         hotspot: true

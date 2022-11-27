@@ -2,10 +2,14 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image'
 import aboutPic from '../public/about.jpg';
+import { PageInfo } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-const About = ({}: Props) => {
+const About = ({pageInfo}: Props) => {
   return (
     <motion.div 
     initial={{
@@ -35,7 +39,7 @@ const About = ({}: Props) => {
             className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 object-cover md:rounded-lg md:w-74 md:h-95 xl:w-[500px] xl:h-[600px]"
         >
             <Image className='rounded-full'
-            src={aboutPic}
+            src={urlFor(pageInfo?.profilePic).url()}
             alt="About picture"
             />
         </motion.div>
@@ -46,7 +50,7 @@ const About = ({}: Props) => {
                 <span className='underline decoration-[#F7AB0A]/50'> little</span>{" "}
                 background
             </h4>
-            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptatum dicta consequatur, suscipit fugit similique debitis aperiam ad ipsum illo nihil. Deleniti quia iste pariatur unde corporis id illum doloremque. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore vitae consectetur dicta nesciunt esse sed, vero doloribus, consequuntur vel dolor incidunt ipsum. Repellat quos corrupti quo ratione blanditiis aperiam doloribus.</p>
+            <p className='text-base'>{pageInfo.BackgroundInformation}</p>
         </div>
     </motion.div>
   )
