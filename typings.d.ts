@@ -1,10 +1,8 @@
-import Image from "next/image";
-
 interface SanityBody {
     _createdAt: string;
     _id: string;
     _rev: string;
-    _updateAt: string;
+    _updatedAt: string;
 }
 
 interface Image {
@@ -17,11 +15,11 @@ interface Image {
 
 export interface PageInfo extends SanityBody {
     _type: 'pageInfo';
-    BackgroundInformation: string;
+    backgroundInformation: string;
     email: string;
-    role: string;
     heroImage: Image;
     name: string;
+    role: string;
     profilePic: Image
 }
 
@@ -46,7 +44,7 @@ export interface Experience extends SanityBody {
     dateStarted: date;
     dateEnded: date;    
     isCurrentlyWorkingHere: boolean;
-    joTitle: string;
+    jobTitle: string;
     points: string[];
     technologies: Technology[];
 }

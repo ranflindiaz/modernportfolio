@@ -23,7 +23,8 @@ const Hero = ({ pageInfo }: Props) => {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles />
-        <Image className='relative rounded-full h-32 w-32 mx-auto object-fit'
+        <img 
+            className='h-32 w-32 relative rounded-full  mx-auto object-fit'
             src={urlFor(pageInfo?.heroImage).url()}
             alt="Picture of Author"
             />
