@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       description: 'Title of skill',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'progress',
@@ -22,7 +22,7 @@ export default {
       type: 'image',
       options: {
         hotspot: true
-      }
+      },
     },
  
   ],

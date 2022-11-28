@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       description: 'Title of the project',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'image',
@@ -20,7 +20,7 @@ export default {
     {
       name: 'summary',
       title: 'Summary',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'technologies',
@@ -30,9 +30,9 @@ export default {
       of: [{type: "reference", to: {type: "skill"}}],
     },
     {
-      name: 'lintToBuild',
-      title: 'LinkToBuild',
-      type: 'url'
+      name: 'linkToBuild',
+      title: 'Link To Build',
+      type: 'url',
     }
   ],
 }
