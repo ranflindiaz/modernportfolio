@@ -44,8 +44,8 @@ export default {
       of: [{type: "reference", to: {type: "skill"}}],
     },
     {
-      name: 'socials',
-      title: 'Socials',
+      name: 'points',
+      title: 'Points',
       type: 'array',
       of: [{ type: "string" }],
     }
