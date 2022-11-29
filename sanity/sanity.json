@@ -2,7 +2,7 @@
   "root": true,
   "api": {
     "projectId": "l5tvs7f5",
-    "dataset": "production"
+    "dataset": "moder-portfolio"
   },
   "project": {
     "name": "moder-portfolio"

@@ -21,16 +21,16 @@ const Hero = ({ pageInfo }: Props) => {
             delaySpeed: 2000,
     });
   return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
+    <div className='h-screen w-screen -mt-20 md:w-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles />
         <img 
-            className='h-32 w-32 relative rounded-full  mx-auto object-fit'
+            className='h-32 w-32 relative rounded-full mx-auto object-fit'
             src={urlFor(pageInfo?.heroImage).url()}
             alt="Picture of Author"
             />
         <div className='z-20'>
-            <h2 className='text-sm uppercase text-gray-500 tracking-[15px]'>{pageInfo?.role}</h2>
-            <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
+            <h2 className='sm:text-sm text-xs uppercase text-gray-500 tracking-[5px]  md:tracking-[15px]'>{pageInfo?.role}</h2>
+            <h1 className='text-2xl md:text-5xl font-semibold px-10'>
                 <span className='mr-3'>{text}</span>
                 <Cursor cursorColor="#F7AB0A" />
             </h1>

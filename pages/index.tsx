@@ -31,27 +31,27 @@ const Home = ({ pageInfo, experineces, projects, skills, socials }: Props) => {
 
       <Header socials={socials}/>
 
-      <section id='hero' className='snap-start'>
+      <section id='hero' className=''>
         <Hero pageInfo={pageInfo}/>
       </section>
 
-      <section id='about' className='snap-center'>
+      <section id='about' className=''>
         <About pageInfo={pageInfo}/>
       </section>
 
-      <section id='experience' className='snap-center'>
+      <section id='experience' className=''>
       <WorkExperience experineces={experineces}/>
       </section>
       
-      <section id='skills' className='snap-start'>
+      <section id='skills' className=''>
         <Skills skills={skills}/>
       </section>
 
-      <section id='projects' className='snap-start'>
+      <section id='projects' className=''>
         <Projects projects={projects}/>
       </section>
 
-      <section id='contact' className='snap-start'>
+      <section id='contact' className=''>
         <ContactMe />
       </section>
 
