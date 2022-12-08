@@ -25,7 +25,6 @@ const Header = ({socials}: Props) => {
             duration: 1
         }}
         className='flex flex-row items-center'>
-            {/* Social Icons */}
             {socials?.map((social) =>(
                 <SocialIcon 
                 key={social._id}
@@ -36,7 +35,6 @@ const Header = ({socials}: Props) => {
             ))}
         </motion.div>
 
-        
         <motion.div 
             initial={{
                 x: 500,
@@ -56,7 +54,9 @@ const Header = ({socials}: Props) => {
                     network='email'
                     fgColor='gray'
                     bgColor='transparent'
+                    href='#contact'
                 />
+                
                 <a href='#contact' className='uppercase hidden md:inline-flex text-sm text-gray-400 cursor-pointer'>Get in Touch</a>
             </motion.div>
     </header>

@@ -9,15 +9,13 @@ type Props = {
 
 const ExperienceCard = ({experience}: Props) => {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] 
-    md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-60 
-    cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[390px] md:w-[600px] xl:w-[900px] h-[600px] md:h-[850px]  bg-[#292929] px-3 py-10 md:p-10 pb-3 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden box-border'>
         <motion.img 
         initial={{ y: -100, opacity: 0  }}
         transition={{ duration: 1.2 }}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true}}
-        className='h-32 w-32 xl:w-[200px] xl:h-[200px] object-fit object-center'
+        className='h-14 w-24 xl:w-[200px] xl:h-[200px] object-fill'
         src={urlFor(experience?.companyImage).url()}
         alt='Mana logo'
         >
@@ -25,12 +23,12 @@ const ExperienceCard = ({experience}: Props) => {
         <div className='px-0 md:px-10'>
         <h4 className="text-xl
         sm:text-4xl font-light pb-2">{experience?.jobTitle}  </h4>
-            <p className='font-bold text-2xl mt-1'>{experience?.company}</p>
+            <p className='font-bold text-base md:text-2xl mt-1'>{experience?.company}</p>
             <div className='flex space-x-2 my-2'>
                 {experience?.technologies.map(tech => (
                     <img 
                         key={tech._id}
-                        className='h-10 w-10 rounded-full'
+                        className='h-8 w-8 md:w-10 md:h-10 rounded-full'
                         src={urlFor(tech?.image).url()}
                     />
                 ))}
@@ -41,7 +39,7 @@ const ExperienceCard = ({experience}: Props) => {
                 {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience?.dateEnded).toDateString()}
             </p>
 
-            <ul className='list-disc space-y-4 ml-5 text-lg h-80 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80'>
+            <ul className='list-disc space-y-4 ml-5 h-80 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80'>
                 {experience.points?.map((point, i) => (
                     <li key={i}> {point}</li>
                 ))}
