@@ -2,6 +2,7 @@ import React from 'react';
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from '../typings';
+import Link from 'next/link';
 
 type Props = {
     socials: Social[]
@@ -35,6 +36,7 @@ const Header = ({socials}: Props) => {
             ))}
         </motion.div>
 
+        <Link href='#contact'>
         <motion.div 
             initial={{
                 x: 500,
@@ -50,15 +52,17 @@ const Header = ({socials}: Props) => {
                 duration: 1
             }}
             className='flex flex-row items-center text-gray-300 cursor-pointer'>
+                
                 <SocialIcon 
                     network='email'
                     fgColor='gray'
                     bgColor='transparent'
-                    href='#contact'
+                    
                 />
                 
                 <a href='#contact' className='uppercase hidden md:inline-flex text-sm text-gray-400 cursor-pointer'>Get in Touch</a>
             </motion.div>
+            </Link>
     </header>
   )
 }

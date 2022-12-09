@@ -26,40 +26,38 @@ const Home = ({ pageInfo, experineces, projects, skills, socials }: Props) => {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
-        <title>{pageInfo.email} - Portfolio</title>
+        <title>Ranflin Diaz - Portfolio</title>
       </Head>
 
       <Header socials={socials}/>
 
-      <section id='hero' className=''>
+      <section id='hero' className='snap-start'>
         <Hero pageInfo={pageInfo}/>
       </section>
 
-      <section id='about' className=''>
+      <section id='about' className='snap-center'>
         <About pageInfo={pageInfo}/>
       </section>
 
-      <section id='experience' className=''>
+      <section id='experience' className='snap-center'>
       <WorkExperience experineces={experineces}/>
       </section>
       
-      <section id='skills' className=''>
+      <section id='skills' className='snap-start'>
         <Skills skills={skills}/>
       </section>
 
-      <section id='projects' className=''>
+      <section id='projects' className='snap-start'>
         <Projects projects={projects}/>
       </section>
 
-      <section id='contact' className=''>
+      <section id='contact' className='snap-start'>
         <ContactMe />
-      </section>
+      </section> 
 
     </div>
   )
 }
-
-export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
@@ -79,3 +77,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 53600,
   };
 };
+
+export default Home;
+
